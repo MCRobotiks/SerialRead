@@ -1,0 +1,22 @@
+//The values are separated by equal signs
+
+void loop(){
+    if (Serial.available()){
+  
+    String Inst= Serial.readString();
+    Serial.print("Instruction received");
+    Serial.println(Inst);
+    delay(1000);
+int equal= Inst.indexOf('=');
+int equal2 = Inst.indexOf('=', equal+1);
+int equal3 = Inst.indexOf('=', equal2+1);
+int equal4 = Inst.indexOf('=', equal3+1);
+int equal5 = Inst.indexOf('=', equal4+1);
+String str1 = Inst.substring(0, equal);
+String str2 = Inst.substring(equal+1,equal2);
+String str3 = Inst.substring(equal2+1,equal3);
+String str4 = Inst.substring(equal3+1,equal4);
+String str5 = Inst.substring(equal4+1,equal5);
+String str6 = Inst.substring(equal5+1);
+   
+ }
